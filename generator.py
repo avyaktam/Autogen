@@ -5,7 +5,7 @@ import time
 scripts = [
     "C:/Users/teo_t/Desktop/Autogen/TextGenerate.py",
     "C:/Users/teo_t/Desktop/Autogen/audiogenerate.py",
-    "C:/Users/teo_t/Desktop/Autogen/imagegeneration.py",
+    "C:/Users/teo_t/Desktop/Autogen/imagegenerate.py",
     "C:/Users/teo_t/Desktop/Autogen/moviegenerate.py"
 ]
 
