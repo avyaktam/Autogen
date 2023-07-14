@@ -1,8 +1,9 @@
+#audiogenerate.py
 import os
 from gtts import gTTS
 
-# Specify the path to the directory containing the text files
-dir_path = "C:\\Users\\teo_t\\Desktop\\Autogen\\Texts"
+# Specify the relative path to the directory containing the text files
+dir_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Texts")
 
 # Get a list of all text files in the directory
 text_files = [f for f in os.listdir(dir_path) if f.endswith('.txt')]

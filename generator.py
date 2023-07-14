@@ -1,12 +1,17 @@
+#generator.py
 import subprocess
 import time
+import os
 
-# Path to your scripts
+# Get the path of the current script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Relative paths to your scripts
 scripts = [
-    "C:/Users/teo_t/Desktop/Autogen/TextGenerate.py",
-    "C:/Users/teo_t/Desktop/Autogen/audiogenerate.py",
-    "C:/Users/teo_t/Desktop/Autogen/imagegenerate.py",
-    "C:/Users/teo_t/Desktop/Autogen/moviegenerate.py"
+    os.path.join(current_dir, "TextGenerate.py"),
+    os.path.join(current_dir, "audiogenerate.py"),
+    os.path.join(current_dir, "imagegenerate.py"),
+    os.path.join(current_dir, "moviegenerate.py")
 ]
 
 # Set the number of loops

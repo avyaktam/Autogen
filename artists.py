@@ -1,4 +1,3 @@
-# List of artists
 artists = [
     'Leonardo da Vinci', 'Michelangelo', 'Raphael', 'Caravaggio', 'Sandro Botticelli', 'Titian',
     'Jan van Eyck', 'Hieronymus Bosch', 'Pieter Bruegel the Elder', 'Albrecht Durer', 'Hans Holbein the Younger',
@@ -7,10 +6,21 @@ artists = [
     'Eugene Delacroix', 'Jean-Auguste-Dominique Ingres', 'Gustave Courbet', 'Jean-Francois Millet', 'Edouard Manet',
     'Edgar Degas', 'Pierre-Auguste Renoir', 'Claude Monet', 'Paul Cezanne', 'Vincent van Gogh',
     'Georges Seurat', 'Paul Gauguin', 'Henri de Toulouse-Lautrec', 'Auguste Rodin', 'Gustav Klimt',
-    'Edvard Munch', 'Henri Matisse', 'Pablo Picasso', 'Egon Schiele', 'Kazimir Malevich',
-    'Marcel Duchamp', 'Georgia O’Keeffe', 'Edward Hopper', 'Max Ernst',
-    'Joan Miro', 'Salvador Dali', 'Rene Magritte',
-    'Willem de Kooning', 'Francis Bacon', 'Mark Rothko', 'Lucian Freud', 'Yves Klein',
-    'Andy Warhol', 'David Hockney', 'Roy Lichtenstein', 'Cy Twombly', 'Agnes Martin',
-    'Gerhard Richter', 'Frank Stella', 'Dan Flavin', 'Anselm Kiefer'
+    'Edvard Munch', 'Henri Matisse', 'Pablo Picasso', 'Egon Schiele', 'Edward Hopper', 'Salvador Dali', 'Rene Magritte',
+    'Francis Bacon', 'Lucian Freud', 'David Hockney', 'Amedeo Modigliani', 'Winslow Homer', 'Mary Cassatt', 
+    'James McNeill Whistler', 'William-Adolphe Bouguereau', 'John Singer Sargent', 'Camille Pissarro', 
+    'Berthe Morisot', 'Alfred Sisley', 'Paul Signac', 'Ivan Shishkin', 'John William Waterhouse', 
+    'Lawrence Alma-Tadema', 'Frederic Leighton', 'Edward Burne-Jones', 'John Everett Millais', 
+    'Norman Rockwell', 'Andrew Wyeth', 'Grant Wood', 'John James Audubon', 'Thomas Gainsborough',
+    'Joshua Reynolds', 'Antonio Canova', 'Jean-Baptiste-Simeon Chardin', 'Eugene Fromentin',
+    'Ivan Aivazovsky', 'Karl Bryullov', 'Giovanni Bellini', 'Andrea Mantegna', 'Paolo Uccello', 'Piero della Francesca', 'Masaccio',
+    'Giotto di Bondone', 'Donatello', 'Sofonisba Anguissola', 'Artemisia Gentileschi', 'Franz Hals',
+    'Nicolas Poussin', 'Anthony van Dyck', 'Jean-Honore Fragonard', 'Thomas Gainsborough', 'William Hogarth',
+    'Jean-Baptiste Greuze', 'Jacopo Tintoretto', 'Tiziano Vecellio', 'Giotto di Bondone', 'Masaccio',
+    'Hans Memling', 'Rogier van der Weyden', 'Paolo Veronese', 'Gustave Caillebotte', 'Edwin Landseer',
+    'Jean-Baptiste Camille Corot', 'Frederic Bazille', 'Jean-Leon Gerome', 'Eduard Manet', 'Henri Fantin-Latour',
+    'Alma-Tadema Sir Lawrence', 'Ilya Yefimovich Repin', 'John Atkinson Grimshaw', 'Edouard Detaille',
+    'William Merritt Chase', 'John William Godward', 'William Blake', 'Eugene Fromentin', 'Jean-Baptiste Carpeaux',
+    'Théodore Géricault', 'John Tenniel', 'Gustave Doré', 'Benozzo Gozzoli', 'Fernand Léger', 'Ford Madox Brown',
+    'Edward Hopper', 'John Everett Millais', 'Edward Burne-Jones', 'Dante Gabriel Rossetti', 'Holman Hunt'
 ]
