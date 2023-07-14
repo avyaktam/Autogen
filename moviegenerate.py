@@ -1,3 +1,4 @@
+#moviegenerate.py
 import os
 import shutil
 import textwrap
@@ -9,12 +10,13 @@ from natsort import natsorted
 
 change_settings({"IMAGEMAGICK_BINARY": r"C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI\\magick.exe"})
 
-# Specify the paths to the parent directories containing the audio and image folders
-audio_parent_folder_path = "C:\\Users\\teo_t\\Desktop\\Autogen\\Texts"
-image_folder_path = "C:\\Users\\teo_t\\Desktop\\Autogen\\Images"
-output_video_folder = "C:\\Users\\teo_t\\Desktop\\Autogen\\Videos"
-processed_dir = "C:\\Users\\teo_t\\Desktop\\Autogen\\Processed"
-audio_tracks_folder_path = "C:\\Users\\teo_t\\Desktop\\Autogen\\audiotracks"
+# Specify the relative paths to the parent directories
+project_folder = os.path.dirname(os.path.abspath(__file__))
+audio_parent_folder_path = os.path.join(project_folder, "Texts")
+image_folder_path = os.path.join(project_folder, "Images")
+output_video_folder = os.path.join(project_folder, "Videos")
+processed_dir = os.path.join(project_folder, "Processed")
+audio_tracks_folder_path = os.path.join(project_folder, "audiotracks")
 
 # Get a list of all the directories within the audio parent folder
 audio_folders = [f for f in os.listdir(audio_parent_folder_path) if os.path.isdir(os.path.join(audio_parent_folder_path, f))]
