@@ -1,11 +1,30 @@
+#textgenerate.py
 import openai
 import os
 import random
-from storyobjects import story_objects
 import re
+from storyobjects import story_objects, used_objects
 
 # Load your API key from an environment variable or secret management service
 openai.api_key = os.getenv('OPENAI_API_KEY')
+
+def update_story_objects():
+    # Select a random object
+    selected_object = random.choice(story_objects)
+
+    # Move the selected object from story_objects to used_objects
+    story_objects.remove(selected_object)
+    used_objects.append(selected_object)
+
+    # Update the storyobjects.py file
+    with open('storyobjects.py', 'w') as file:
+        file.write(f"story_objects = {story_objects}\n")
+        file.write(f"used_objects = {used_objects}")
+
+    return selected_object
+
+# Select a random object from the list and update the storyobjects.py file
+selected_object = update_story_objects()
 
 # Define a function to generate a story given a prompt
 def generate_story(prompt):
@@ -21,14 +40,8 @@ def generate_story(prompt):
     )
     return response.choices[0].message['content'].strip()
 
-# List of object names
-object_names = story_objects
-
-# Select a random object name from the list
-object_name = random.choice(object_names)
-
 # Create the prompt
-story_prompt = f"Write a short informative text about {object_name}."
+story_prompt = f"Write a short informative text about {selected_object}."
 
 # Generate a story
 story = generate_story(story_prompt)
@@ -65,8 +78,8 @@ chunks = [title]  # Start with title
 for paragraph in paragraphs:
     chunks.extend(create_paragraphs(paragraph))
 
-# Your directory path
-directory = "C:\\Users\\teo_t\\Desktop\\Autogen\\Texts"
+# Your directory path relative to the project folder
+directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Texts")
 
 # Generate a filename from the title
 # Replace spaces with underscores and remove any non-alphanumeric characters
