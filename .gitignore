@@ -1,6 +1,6 @@
 /Processed
 /processed2
-/stablediffusion-main
+stablediffusion-main/**
 /Videos
 /audiotracks
 codecache.py
