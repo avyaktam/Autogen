@@ -1,5 +1,6 @@
 /Processed
 /processed2
+/stablediffusion-main
 /Videos
 /audiotracks
 codecache.py
@@ -7,5 +8,4 @@ hazel-strand-393310-66038e1e9eed.json
 codecache2.py
 SDgenerate.py
 storyobjectsRemoveDuplicates.py
-/stablediffusion-main
 text2chatgpt.txt
