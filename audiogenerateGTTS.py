@@ -1,12 +1,6 @@
+#audiogenerate.py
 import os
-import random
-from google.cloud import texttospeech
-
-# Set your google cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\teo_t\Desktop\Autogen\hazel-strand-393310-66038e1e9eed.json"
-
-# Instantiate a client
-client = texttospeech.TextToSpeechClient()
+from gtts import gTTS
 
 # Specify the relative path to the directory containing the text files
 dir_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Texts")
@@ -31,43 +25,17 @@ for i, text_file in enumerate(text_files, start=1):
     directory_path = os.path.join(dir_path, directory_name)
     os.makedirs(directory_path, exist_ok=True)
 
-    # Randomly choose a gender for the voice
-    gender = random.choice([
-        texttospeech.SsmlVoiceGender.MALE,
-        texttospeech.SsmlVoiceGender.FEMALE,
-    ])
-
     # Process each paragraph
     for j, paragraph in enumerate(paragraphs, start=1):
         # Ignore empty paragraphs
         if not paragraph.strip():
             continue
 
-        # Set the text input to be synthesized
-        synthesis_input = texttospeech.SynthesisInput(text=paragraph)
-
-        # Build the voice request
-        voice = texttospeech.VoiceSelectionParams(
-            language_code="en-CA",
-            ssml_gender=gender,
-        )
-
-        # Select the type of audio file
-        audio_config = texttospeech.AudioConfig(
-            audio_encoding=texttospeech.AudioEncoding.MP3,
-            speaking_rate=1.1,  # Speaking rate set to 1.1
-            pitch=0,
-        )
-
-        # Perform the text-to-speech request
-        response = client.synthesize_speech(
-            input=synthesis_input, voice=voice, audio_config=audio_config
-        )
+        # Generate speech
+        tts = gTTS(text=paragraph, lang='en', tld='ca')
 
         # Save the speech audio into a file
         audio_file_path = os.path.join(directory_path, f"{i}_{text_file.replace('.txt', '')}_paragraph_{j}.mp3")
-        with open(audio_file_path, "wb") as out:
-            out.write(response.audio_content)
+        tts.save(audio_file_path)
 
     print(f"Processed {text_file}")
-

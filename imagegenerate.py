@@ -17,10 +17,10 @@ print(current_dir)
 sys.path.append('C:/Users/teo_t/Desktop/Autogen')
 
 # Define path to text files
-text_folder_path = "C:\\Users\\teo_t\\Desktop\\Autogen\\Texts\\"
+text_folder_path = os.path.join(current_dir, "Texts")
 
 # Define path for saving generated images
-image_folder_path = "C:\\Users\\teo_t\\Desktop\\Autogen\\Images\\"
+image_folder_path = os.path.join(current_dir, "Images")
 
 # List of text files
 text_files = [f for f in os.listdir(text_folder_path) if f.endswith('.txt')]
