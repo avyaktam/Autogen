@@ -31,7 +31,7 @@ def generate_story(prompt):
     response = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",  # Use the most cost-effective GPT-3.5-turbo model
       messages=[
-            {"role": "system", "content": "You are a narrator specializing in crafting short, concise, engaging texts. Your text needs to start with a title. The text needs to be about 100 words long."},
+            {"role": "system", "content": "You are a narrator specializing in crafting short, concise, engaging texts, your specializations are in technological, scientific, and mathematical concepts. Your text needs to start with a title. The text needs to be about 120 words long."},
             {"role": "user", "content": prompt}
         ],
       temperature=0.6,  # Adjust this to change the randomness of the output
