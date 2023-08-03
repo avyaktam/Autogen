@@ -8,6 +8,7 @@ from moviepy.editor import ImageSequenceClip, AudioFileClip, concatenate_videocl
 from moviepy.audio.AudioClip import CompositeAudioClip
 from moviepy.video.fx.resize import resize
 from moviepy.video.VideoClip import ColorClip
+from moviepy.video.fx.all import crop
 from natsort import natsorted
 
 change_settings({"IMAGEMAGICK_BINARY": r"C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI\\magick.exe"})
@@ -62,20 +63,21 @@ for audio_folder in audio_folders:
         durations = [1/fps for _ in range(int(audio_duration*fps))]
 
         image_clip = ImageSequenceClip(images, durations=durations)
-        image_clip = image_clip.fx(resize, width=video_width) # resize to video width
-
-        if image_clip.size[1] > image_max_height:
-            image_clip = image_clip.fx(resize, height=image_max_height) # limit the height of the image
+        zoom_factor = 1.1  # Adjust this value as needed
+        zoomed_width = int(video_width * zoom_factor)
+        zoomed_height = int(video_height * zoom_factor)
+        image_clip = image_clip.resize(height=zoomed_height) # zoom in
+        image_clip = image_clip.fx(crop, x_center=zoomed_width/2, y_center=zoomed_height/2, width=video_width, height=video_height)  # center crop back to original size
 
         image_clip = image_clip.set_position(('center', 'center')) # center the image
         image_clip.fps = fps
         image_clip.audio = audio
 
-        fontsize = 38
+        fontsize = 50
+
 
         def text_position(t):
-            return ('center', video_height * 5 / 6 + fontsize - 100) # place text just below the image with an offset of -20 pixels
-
+            return ('center', video_height * 1 / 2 + fontsize - 0) # place text just below the image with an offset of -200 pixels
         if idx < len(paragraphs):
             wrapped_text = '\n'.join(textwrap.wrap(paragraphs[idx], width=50))
 
@@ -85,7 +87,7 @@ for audio_folder in audio_folders:
                 print("The wrapped text is empty. Skipping this iteration.")
                 continue
 
-            text = TextClip(wrapped_text, fontsize=fontsize, color='red', size=(video_width*0.9, None)) # set width of text box to 90% of video frame width
+            text = TextClip(wrapped_text, fontsize=fontsize, color='red', stroke_color='black', stroke_width=2, size=(video_width, None))
             text = text.set_duration(audio_duration).set_position(text_position).margin(left=int(video_width*0.05), right=int(video_width*0.05)) # add left and right margin
 
         background = ColorClip((video_width, video_height), col=[0,0,0]).set_duration(audio_duration)
@@ -106,7 +108,7 @@ for audio_folder in audio_folders:
 
     backtrack = backtrack.subclip(0, final_clip.duration)
 
-    backtrack = backtrack.volumex(0.4)
+    backtrack = backtrack.volumex(0.3)
 
     final_clip.audio = CompositeAudioClip([final_clip.audio, backtrack])
 

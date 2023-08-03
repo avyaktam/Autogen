@@ -17,7 +17,7 @@ def update_story_objects():
     used_objects.append(selected_object)
 
     # Update the storyobjects.py file
-    with open('storyobjects.py', 'w') as file:
+    with open('storyobjects.py', 'w', encoding='utf-8') as file:
         file.write(f"story_objects = {story_objects}\n")
         file.write(f"used_objects = {used_objects}")
 
@@ -29,12 +29,12 @@ selected_object = update_story_objects()
 # Define a function to generate a story given a prompt
 def generate_story(prompt):
     response = openai.ChatCompletion.create(
-      model="gpt-3.5-turbo",  # Use the most cost-effective GPT-3.5-turbo model
+      model="gpt-4",  # Choose GPT model
       messages=[
-            {"role": "system", "content": "You are a narrator specializing in crafting short, concise, engaging texts, your specializations are in technological, scientific, and mathematical concepts. Your text needs to start with a title. The text needs to be about 120 words long."},
+            {"role": "system", "content": "You are a creative writer crafting short, captivating texts on a variety of subjects. Each text must start with an attention-grabbing, unique title. Immediately following the title, dive into a body of about 120 words that directly addresses the topic. Make use of vivid language, storytelling techniques, humor, and surprise elements where appropriate. The text should be engaging and concise. Don't use clichees, quotation marks or the word 'title' in the beginning of your text."},
             {"role": "user", "content": prompt}
         ],
-      temperature=0.6,  # Adjust this to change the randomness of the output
+      temperature=0.7,  # Adjust this to change the randomness of the output
       max_tokens=800,    # Adjust this based on how long you want your story to be
       stop=["The End"]  # Stop generating further tokens when "The End" is generated
     )
@@ -89,19 +89,20 @@ filename = re.sub(r'\W+', '', title.replace(' ', '_')) + '.txt'
 filename = os.path.join(directory, filename)
 
 # Open a text file in write mode
-with open(filename, 'w') as f:
+with open(filename, 'w', encoding='utf-8') as f:
     # For each chunk in the list of chunks
     for chunk in chunks:
         # Write the chunk to the file
         f.write(chunk + '\n\n')  # Added '\n\n' to separate chunks by a blank line
 
 # Open the file in read mode, read the content
-with open(filename, 'r') as f:
+with open(filename, 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Replace consecutive newlines with a single newline
 content = re.sub('\n{3,}', '\n\n', content)
 
 # Open the file in write mode, write the modified content back
-with open(filename, 'w') as f:
+with open(filename, 'w', encoding='utf-8') as f:
     f.write(content)
+

@@ -1,4 +1,36 @@
 artists = [
+     "Ansel Adams", "Richard Avedon", "Robert Capa", "Henri Cartier-Bresson", "Imogen Cunningham", 
+    "Walker Evans", "Dorothea Lange", "Sally Mann", "Mary Ellen Mark", "Robert Mapplethorpe", 
+    "Joel Meyerowitz", "Cindy Sherman", "Alfred Stieglitz", "Paul Strand", "Edward Weston", 
+    "Diane Arbus", "Eugène Atget", "David Bailey", "Cecil Beaton", "Margaret Bourke-White", 
+    "Bill Brandt", "Robert Doisneau", "Harold Edgerton", "Andreas Gursky", "Lewis Hine", 
+    "Gertrude Käsebier", "André Kertész", "Dorothea Lange", "Jacques-Henri Lartigue", "Annie Leibovitz", 
+    "Helen Levitt", "Danny Lyon", "Man Ray", "Steve McCurry", "Eadweard Muybridge", 
+    "Arnold Newman", "Georgia O'Keeffe", "Gordon Parks", "Irving Penn", "Alexander Rodchenko", 
+    "Sebastião Salgado", "Aaron Siskind", "W. Eugene Smith", "Edward Steichen", "Paul Strand", 
+    "Jerry Uelsmann", "Carleton Watkins", "Weegee", "Edward Weston", "Minor White", 
+    "Garry Winogrand", "Francesca Woodman", "Lisette Model", "Elliott Erwitt", "Nan Goldin", 
+    "Brassai", "Julia Margaret Cameron", "Frederick H. Evans", "Hiroshi Sugimoto", "Vivian Maier", 
+    "James Nachtwey", "Mario Testino", "Tim Walker", "Patrick Demarchelier", "Terry Richardson", 
+    "Peter Lindbergh", "Richard Prince", "David LaChapelle", "Helmut Newton", "Guy Bourdin", 
+    "Don McCullin", "Gregory Crewdson", "Cristina García Rodero", "Graciela Iturbide", "Sebastião Salgado", 
+    "Martin Parr", "Nan Goldin", "Robert Frank", "William Klein", "Wolfgang Tillmans", 
+    "Larry Clark", "Juergen Teller", "Ryan McGinley", "Stephen Shore", "Philip-Lorca diCorcia",
+    "Berenice Abbott", "Yann Arthus-Bertrand", "Eve Arnold", "Harry Benson", "Karl Blossfeldt",
+    "Bourne and Shepherd", "Mathew Brady", "Anne Brigman", "Larry Burrows", "Julia Margaret Cameron",
+    "Robert Cornelius", "Edward S. Curtis", "Moneta Sleet Jr.", "Carol M. Highsmith", "David Douglas Duncan",
+    "Jill Freedman", "Lee Friedlander", "Emmet Gowin", "Nadar", "George Hurrell", "Graciela Iturbide",
+    "William Henry Jackson", "Yousuf Karsh", "Michael Kenna", "Dorothea Lange", "O. Winston Link",
+    "Danny Lyon", "Vivian Maier", "Sally Mann", "Mary Ellen Mark", "Steve McCurry", "Joel Meyerowitz",
+    "Inge Morath", "James Nachtwey", "Arnold Newman", "Gordon Parks", "Martin Parr", "Irving Penn",
+    "Eliot Porter", "Marc Riboud", "Herb Ritts", "Sebastião Salgado", "Cindy Sherman", "Aaron Siskind",
+    "W. Eugene Smith", "Frederick Sommer", "Edward Steichen", "Paul Strand", "Joyce Tenneson",
+    "Pete Turner", "Jerry Uelsmann", "Albert Watson", "Carrie Mae Weems", "Brett Weston",
+    "Kim Weston", "Garry Winogrand", "Dan Winters", "Francesca Woodman", "Wright Morris"   
+    
+]
+
+painters = [
     'Leonardo da Vinci', 'Michelangelo', 'Raphael', 'Caravaggio', 'Sandro Botticelli', 'Titian',
     'Jan van Eyck', 'Hieronymus Bosch', 'Pieter Bruegel the Elder', 'Albrecht Durer', 'Hans Holbein the Younger',
     'El Greco', 'Peter Paul Rubens', 'Rembrandt', 'Johannes Vermeer', 'Diego Velazquez',

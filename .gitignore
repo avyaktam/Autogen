@@ -9,3 +9,5 @@ codecache2.py
 SDgenerate.py
 storyobjectsRemoveDuplicates.py
 text2chatgpt.txt
+__pycache__/storyobjects.cpython-310.pyc
+__pycache__/artists.cpython-310.pyc
